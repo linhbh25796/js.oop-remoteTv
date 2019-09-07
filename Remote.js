@@ -1,13 +1,38 @@
-let Remote =function () {
-    this.channel = 0;
-    this.volume = 0;
+let Remote = function () {
+    this.power = function (tv) {
+        tv.onOff();
+    };
 
-    this.switchChannel =function (channel) {
-        this.channel =channel;
-        alert("Channel is changed");
+    this.setChannel1 = function (tv) {
+        tv.setChannel(1);
+    };
+    this.setChannel2 = function (tv) {
+        tv.setChannel(2);
+    };
+    this.setVolumeDown = function (tv) {
+        tv.setVolumeDown();
+    };
+    this.setVolumeUp = function (tv) {
+        tv.setVolumeUp();
     }
-    this.switchVolume = function (volume) {
-        this.volume =volume;
-        alert("Volume is changed");
-    }
+
 };
+
+let remote = new Remote();
+
+function power() {
+    remote.power(tv);
+}
+function btn1() {
+    remote.setChannel1(tv);
+}
+function btn2() {
+    remote.setChannel2(tv);
+
+}
+function btnVolUp() {
+    remote.setVolumeUp(tv);
+}
+function btnVolDown() {
+    remote.setVolumeDown(tv);
+}

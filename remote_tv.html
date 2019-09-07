@@ -5,20 +5,35 @@
     <title>Remote</title>
 </head>
 <body>
+<div>
+    <img id="screen" style="position: center" src="tvOff.png">
+</div>
+<div>
+    <img src="remote.jpg" usemap="#mapRemote" style="position: center">
+    <map name="mapRemote">
+        <area shape="rect" coords="138, 15, 161, 32" onclick="power()"/>
+        <area shape="rect" coords="141, 36, 162, 49" onclick="btn1()"/>
+        <area shape="rect" coords="171, 35, 189, 52" onclick="btn2()"/>
+        <area shape="rect" coords="144, 124, 164, 137" onclick="btnVolUp()"/>
+        <area shape="rect" coords="147, 147, 165, 168" onclick="btnVolDown()"/>
+    </map>
 
+</div>
+<div>
+    Volume<p id="volume"></p>
+</div>
 </body>
 <script src="TV.js"></script>
 <script src="Remote.js"></script>
-<script>
-    let tv = new Tivi(1,0);
-    console.log("Channel: "+ tv.showChannel());
-    console.log("Volume: "+tv.showVolume());
-    let remote = new Remote();
-    remote.switchChannel(2);
-    remote.switchVolume(10);
-
-    tv.connectRemote(remote);
-    console.log("Channel: "+tv.showChannel());
-    console.log("Volume: "+tv.showVolume());
-</script>
+<!--<script>-->
+<!--    let tv = new Tivi(1,0);-->
+<!--    console.log("Channel: "+ tv.showChannel());-->
+<!--    console.log("Volume: "+tv.showVolume());-->
+<!--    let remote = new Remote();-->
+<!--    remote.switchChannel(2);-->
+<!--    remote.switchVolume(10);-->
+<!--    tv.connectRemote(remote);-->
+<!--    console.log("Channel: "+tv.showChannel());-->
+<!--    console.log("Volume: "+tv.showVolume());-->
+<!--</script>-->
 </html>

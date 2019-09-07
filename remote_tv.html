@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote</title>
+</head>
+<body>
+
+</body>
+<script src="TV.js"></script>
+<script src="Remote.js"></script>
+<script>
+    let tv = new Tivi(1,0);
+    console.log("Channel: "+ tv.showChannel());
+    console.log("Volume: "+tv.showVolume());
+    let remote = new Remote();
+    remote.switchChannel(2);
+    remote.switchVolume(10);
+
+    tv.connectRemote(remote);
+    console.log("Channel: "+tv.showChannel());
+    console.log("Volume: "+tv.showVolume());
+</script>
+</html>
